@@ -41,7 +41,8 @@ public class IconDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Vector2 leftTopPosition = new Vector2(leftTopPosX, leftTopPosY);
         // 왼쪽 위 이미지 셀이 (0, 0)인 기준. (eventData.position이 아닌 pressPosition을 사용해야 함)
         Vector2Int mouseCoord = new Vector2Int(Mathf.FloorToInt((eventData.pressPosition.x - leftTopPosition.x) / _cellSize), Mathf.FloorToInt((leftTopPosition.y - eventData.pressPosition.y) / _cellSize));
-        
+
+        Debug.Log($"Mouse Coord {mouseCoord}");
         // 마우스가 집은 이미지의 칸 중앙 위치
         Vector2 _selectedImageCellCenter = new Vector2(leftTopPosition.x + mouseCoord.x * _cellSize + _cellSize / 2, leftTopPosition.y - mouseCoord.y * _cellSize - _cellSize / 2);
 
